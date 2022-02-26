@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--style sheet-->
     <link rel="stylesheet" href="styles.css">
-    <title>Weather app - Javascript</title>
+    <!--javascript-->
+    <script defer src='app.js'></script>
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <!--title-->
+    <title>Weather app - geolocation</title>
 </head>
 
 <body>
@@ -14,11 +24,24 @@
         <div class="location"></div>
         <div class="notification"></div>
         <div class="icon"></div>
+        <div class="description">
+            <p>-</p>
+        </div>
         <div class="temperature">
-            <p>- °C</p>
+            <p>Current temperature : <span> - °C</span></p>
+        </div>
+        <div class='min-max-temperature'>
+            <div class="min-temperature">
+                <p>Maximun temperature : </p>
+                <span>- °C</span>
+            </div>
+            <div class="max-temperature">
+                <p>Minimun temperature : </p>
+                <span>- °C</span>
+            </div>
         </div>
     </div>
-    <script src='app.js'></script>
+    <a href="https://openweathermap.org">Powered by OpenWeatherMap</a>
 </body>
 
 </html>

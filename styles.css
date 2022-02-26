@@ -1,5 +1,69 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: rgb(4, 113, 242);
+  background: linear-gradient(
+    19deg,
+    rgba(4, 113, 242, 1) 3%,
+    rgba(100, 45, 221, 1) 39%,
+    rgba(251, 0, 254, 1) 100%
+  );
+
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .container {
+  font-size: 23px;
   border: 1px black solid;
-  width: 200px;
-  height: 300px;
+  width: 65%;
+  margin: auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.82);
+  border-radius: 30px;
+  padding: 2rem;
+}
+
+.location {
+  font-weight: 700;
+  font-size: 40px;
+}
+.location p {
+  margin-top: 0;
+}
+.icon img {
+  width: 150px;
+}
+.temperature {
+  margin: auto;
+}
+.min-max-temperature {
+  display: flex;
+  justify-content: space-evenly;
+}
+span {
+  font-weight: 600;
+  font-size: 25px;
+}
+.notification {
+  background-color: #ff5e5e;
+  color: white;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  font-size: 12px;
 }

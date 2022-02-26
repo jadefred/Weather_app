@@ -2,7 +2,10 @@
 const locationElement = document.querySelector(".location");
 const notificationElement = document.querySelector(".notification");
 const iconElement = document.querySelector(".icon");
-const temperatureElement = document.querySelector(".temperature p");
+const temperatureElement = document.querySelector(".temperature span");
+const descriptionElement = document.querySelector(".description p");
+const minTemperatureElement = document.querySelector(".min-temperature span");
+const maxTemperatureElement = document.querySelector(".max-temperature span");
 
 //for changing temperature from kelvin to celsius
 const kelvin = 273.15;
@@ -30,7 +33,7 @@ function showError(error) {
 }
 
 //get weather api from openweathermap
-let key = "enter your api key";
+let key = "YOUR API KEY";
 
 async function getWeather(lat, long) {
   let api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`;
@@ -44,8 +47,13 @@ async function getWeather(lat, long) {
 //display weather in browser
 function displayWeather(data) {
   let temp = Math.floor(data.main.temp - kelvin);
+  let minTemp = Math.floor(data.main.temp_min - kelvin);
+  let maxTemp = Math.floor(data.main.temp_max - kelvin);
 
   locationElement.innerHTML = `<p>${data.name}, ${data.sys.country}</p>`;
   iconElement.innerHTML = `<img src='http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png' />`;
-  temperatureElement.innerHTML = `<p>${temp} °C</p>`;
+  temperatureElement.innerHTML = `<span>${temp} °C</span>`;
+  descriptionElement.innerHTML = `<p>${data.weather[0].description}</p>`;
+  minTemperatureElement.innerHTML = `<span>${minTemp} °C</span>`;
+  maxTemperatureElement.innerHTML = `<span>${maxTemp} °C</span>`;
 }
